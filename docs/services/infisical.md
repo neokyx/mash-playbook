@@ -2,6 +2,7 @@
 SPDX-FileCopyrightText: 2023 Julian-Samuel Gebühr
 SPDX-FileCopyrightText: 2023 - 2024 Slavi Pantaleev
 SPDX-FileCopyrightText: 2025 Suguru Hirahara
+SPDX-FileCopyrightText: 2025 Neokyx
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
@@ -36,11 +37,11 @@ infisical_enabled: true
 infisical_hostname: infisical.example.com
 
 # Generate this with: `openssl rand -hex 16`
-infisical_backend_environment_variable_encryption_key: ''
+infisical_environment_variable_encryption_key: ''
 
 # WARNING: uncomment this after creating your first user account,
 # unless you'd like to run a server with public registration enabled.
-# infisical_backend_environment_variable_invite_only_signup: true
+# infisical_environment_variable_invite_only_signup: true
 
 ########################################################################
 #                                                                      #
@@ -230,7 +231,7 @@ By default, the Infisical instance allows anyone to sign up from the web interfa
 We recommend installing with registration open to public at first to create your first user. After creating the user, you can disable public registration by adding the following configuration to `vars.yml`:
 
 ```yaml
-infisical_backend_environment_variable_invite_only_signup: true
+infisical_environment_variable_invite_only_signup: true
 ```
 
 Note that enabling invite-only registration requires the mailer to be configured with the settings below.
@@ -242,15 +243,15 @@ As described in the Infisical documentation about [email](https://infisical.com/
 To enable the mailer function, add the following configuration to your `vars.yml` file:
 
 ```yaml
-infisical_backend_environment_variable_smtp_host: smtp.example.com
-infisical_backend_environment_variable_smtp_port: 587
-infisical_backend_environment_variable_smtp_secure: false
+infisical_environment_variable_smtp_host: smtp.example.com
+infisical_environment_variable_smtp_port: 587
+infisical_environment_variable_smtp_secure: false
 
-infisical_backend_environment_variable_smtp_username: infisical@example.com
-infisical_backend_environment_variable_smtp_password: ''
+infisical_environment_variable_smtp_username: infisical@example.com
+infisical_environment_variable_smtp_password: ''
 
-infisical_backend_environment_variable_smtp_address: infisical@example.com
-infisical_backend_environment_variable_smtp_name: Infisical
+infisical_environment_variable_smtp_address: infisical@example.com
+infisical_environment_variable_smtp_name: Infisical
 ```
 
 For additional SMTP-related variables, consult the [`defaults/main.yml` file](https://github.com/mother-of-all-self-hosting/ansible-role-infisical/blob/main/defaults/main.yml) in the [ansible-role-infisical](https://github.com/mother-of-all-self-hosting/ansible-role-infisical) Ansible role.
